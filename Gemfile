@@ -6,10 +6,10 @@ gem 'rails', '3.2.16'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'heroku'
 
 group :production do
   gem 'pg'
+  gem 'heroku'
 end
 group :development, :test do
   gem 'sqlite3'
