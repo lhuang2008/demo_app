@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>A Rails Demo App | <%= @title %></title>
-  <%= csrf_meta_tags %>
-  <%= stylesheet_link_tag "blueprint/screen", :media => "screen" %>
+  <title>A Rails Demo App - <%= @title %></title>
 </head>
 <body>
-
-<%= yield %>
-
+  <div class="container">
+    <%= render "layouts/header" %>
+    <section class="round">
+      <%= yield %>
+    </section>
+    <%= render "layouts/footer" %>
+  </div>
 </body>
 </html>
