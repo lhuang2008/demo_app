@@ -1,4 +1,5 @@
 DemoApp::Application.routes.draw do
+  match '/signup', :to => 'users#new'
 #  get "pages/home"
 #  get "pages/contact"
 #  get "pages/about"
