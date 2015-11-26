@@ -1,4 +1,23 @@
 class UsersController < ApplicationController
+  before_filter :authenticate, :only => [:edit, :update, :destroy]
+
+  private
+
+  def authenticate
+    if current_user.nil?
+      redirect_to signin_path, :notice => "Please sign in."
+    else
+      # All of edit, update and destroy actions have an :id parameter.
+      user = User.find(params[:id])
+      if user != current_user
+        redirect_to root_path, 
+          :notice => "Editing other users is not allowed."
+      end
+    end
+  end
+
+  public
+
   # GET /users
   # GET /users.json
   def index
