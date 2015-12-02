@@ -13,8 +13,9 @@ group :production do
 end
 group :development, :test do
   gem 'sqlite3'
-  gem 'faker'
 end
+
+gem 'faker'
 
 # Gems used only for assets and not required
 # in production environments by default.
