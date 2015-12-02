@@ -8,7 +8,6 @@
           <table class="microposts">
             <%= render @microposts %>
           </table>
-          <%= will_paginate @microposts %>
         <% end %>
     </td>
     <td class="sidebar round">
@@ -17,6 +16,7 @@
       <strong>URL</strong> <%= link_to user_path(@user), @user %><br/>
       <strong>Microposts</strong> <%= @user.microposts.count %>
       <% if current_user == @user %>
+        <br/>
         <%= link_to 'Edit My Info', edit_user_path(@user) %>
       <% end %>
     </td>
